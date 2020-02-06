@@ -1,0 +1,145 @@
+﻿@model IEnumerable<Models.GoodsComment>
+@{ 
+    Layout = null;
+    
+}
+<style>
+    #tl{
+        height:100px;
+        width:200px;
+        border:1px solid red;
+    }
+   
+    #p3{
+
+    }
+    .touxiang{
+        height:60px;
+        width:60px;
+        float:left;
+        border-radius:50px;
+        /*margin-top:43px;*/
+    }
+    .btn2{
+        width:82px;
+        height:34px;
+
+        margin-right:50px;
+        margin-top:8px;
+        border-radius:5px;
+
+    }
+   
+</style>
+<div>
+    @foreach (var p in Model)
+    {
+
+        <div style="margin-left:20px;margin-top:43px;">
+            <img src="~/Images/HeadImages/@p.Users.HeadImage" class="touxiang" />
+        </div>
+
+
+            <div>
+                <span>@p.Users.UserName:</span>
+                <span> @p.ComContent</span>
+                <span><button id="btn3" type="button" onclick="document.getElementById('@p.GoodsCommentID').style.display=document.getElementById('@p.GoodsCommentID').style.display=='' ? 'none' : '',document.getElementById('btn3').style.display='none'" style="margin-left:426px;">回复</button></span>
+            </div>
+
+            <div id="@p.GoodsCommentID" style="display:none">
+                <input name="huifu" style="border-radius:4px;-webkit-border-radius:4px;-moz-border-radius:4px;height:68px;width:623px;border:1px solid #c03f3c;" id="tl">
+                <button class="btn2" type="button">回复</button>
+                <input type="hidden" value="@p.GoodsCommentID" name="commentid" />
+
+            </div>
+
+
+            <div id="p3">
+
+                @Html.Action("Reply", "Mall", new { commentid = p.GoodsCommentID })
+
+            </div>
+      
+    }
+    
+</div>
+
+@*@using (Html.BeginForm("Comment", "Mall", FormMethod.Post))
+{
+    <textarea name="pinglunkuang" style="resize:none;border-radius:4px;-webkit-border-radius:4px;-moz-border-radius:4px;height:68px;width:798px;display:block;border:1px solid #c03f3c;"></textarea>
+    <input type="submit" value="发表评论" />
+}
+<div>
+    
+    @foreach (var item in Model)
+    {
+        tempid = "div" + item.GoodsCommentID;
+        
+        <input type="submit" value="@item.GoodsCommentID" name="commentid" style="visibility: hidden"/>
+        <a><img src="@item.Users.HeadImage" /></a> @item.ComContent
+        @item.ComTime
+        <div style="height:100px;width:200px;background-color:bisque;float:right;margin-right:30px">
+            <button class="btn btn-xs btn-default" onclick="document.getElementById('@tempid').style.display = document.getElementById('@tempid').style.display == '' ? 'none' : ''">回复</button>"
+        </div>
+        <div id="@tempid" style="display:none;height:100px;width:200px;background-color:red">
+            <div>
+                @using (Html.BeginForm("Reply","Mall",new { commentid=item.GoodsCommentID },FormMethod.Post,new { id = "CreateForm", enctype = "multipart/form-data" }))
+                {
+                    <textarea name="huifukuang" placeholder="我要简单说两句"style="resize:none;margin:10px auto;border-radius:4px;height:70px; width:600px;-webkit-border-radius:4px;-moz-border-radius:4px;border:1px solid rgba(0, 0, 0,0.5);"></textarea>
+                    <input type="submit" value="提交" />
+                }
+            </div>
+        </div>
+        foreach (Models.ComReply C in item.ComReply.Where(p => p.GoodsCommentID == item.GoodsCommentID).ToList().AsReadOnly())
+        {
+            <div>
+                <a>@C.Users.UserName</a> 回复 <a>@C.GoodsComment.Users.UserName</a><p>&nbsp;&nbsp;@C.RepContent</p>
+                @C.RepTime
+            </div>
+        }
+    }
+</div>*@
+<script>
+    $(function () {
+        var com= $("input[name='commentid']");
+        var hf = $("input[name='huifu']");
+        
+        
+        
+        $(".btn2").on("click", function () {
+            
+            $.ajax({
+                type: 'post',
+
+                url: "/Mall/Reply",
+                data: {
+                    "commentid":com.val(),
+                    "text":hf.val()
+                },
+                
+                success: function (data) {
+                    alert(data.message);
+                    $.ajax({
+                        type:'get',
+                    
+                        url: "/Mall/Reply",
+                        data: {
+                            "commentid":com,
+                        },
+                        success: function (data) {
+                            $("#p3").html(data);
+                        },
+                        //async: true
+                       
+                    });
+
+                },
+                //async: true
+                //error: function () {
+                //    alert("购物失败");
+                //}
+                
+            });
+        });
+    })
+</script>

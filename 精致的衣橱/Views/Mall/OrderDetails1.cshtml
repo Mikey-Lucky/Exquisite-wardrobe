@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Models.OrderDetails>
+@*@{
+    ViewBag.Title = "OrderDetails1";
+  
+}*@
+
+@*<h2>OrderDetails1</h2>*@
+<table class="table">
+    <tr>
+        <th>商品名称</th>
+        <th>商品图片</th>
+        <th>商品单价</th>
+        <th>商品数量</th>
+    </tr>
+
+    @foreach(var item in Model) { 
+        <tr>io
+            <td>@item.Goods.Name</td>
+            <td><img src="~/Images/GoodsImages/@item.Goods.GoodsImage" style="width:100px;height:100px;"/></td>
+            <td>@item.Goods.Unitprice</td>
+            <td>@item.Count</td>
+        </tr>
+    }
+
+</table>

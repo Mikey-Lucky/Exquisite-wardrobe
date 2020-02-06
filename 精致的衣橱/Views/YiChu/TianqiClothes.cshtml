@@ -1,0 +1,66 @@
+﻿
+@model 精致的衣橱.Models.YiChuViewModel
+@{
+    Layout = null;
+}
+<div>
+    @if (Model.coatbytemp.FirstOrDefault() != null)
+    {
+        <span>外套</span>
+    }
+    <div class="ml">
+        @foreach (var c in Model.coatbytemp)
+        {
+            <img src="/Images/Coat/@c.Image" />
+        }
+    </div>
+</div>
+<div>
+    @if (Model.shirtbytemp.FirstOrDefault() != null)
+    {
+        <span>上单衣</span>
+    }
+    <div class="ml">
+        @foreach (var s in Model.shirtbytemp)
+        {
+            <img src="/Images/shirt/@s.Image" />
+        }
+    </div>
+</div>
+<div>
+    @if (Model.nethergarmentbytemp.FirstOrDefault() != null)
+    {
+        <span>下装</span>
+    }
+    <div class="ml">
+        @foreach (var n in Model.nethergarmentbytemp)
+        {
+            <img src="/Images/NetherGarment/@n.Image" />
+        }
+    </div>
+</div>
+<div >
+    @if (Model.suitbytemp.FirstOrDefault() != null)
+    {
+        <span>套装</span>
+    }
+    <div class="ml">
+        @foreach (var s in Model.suitbytemp)
+        {
+            <img src="/Images/Suit/@s.Image" />
+        }
+    </div>
+</div>
+
+@if (Model.dapeishangyi != null)
+{
+    <span>为你搭配</span>
+
+<div class="ml">
+    <img src="/Images/shirt/@Model.dapeishangyi.Image" />
+
+    <img src="/Images/NetherGarment/@Model.daipeixiyi.Image" /> 
+</div>
+}
+
+

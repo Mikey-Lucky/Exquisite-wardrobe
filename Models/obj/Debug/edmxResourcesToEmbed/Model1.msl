@@ -1,0 +1,548 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="yichuModelStoreContainer" CdmEntityContainer="yichuEntities">
+    <EntitySetMapping Name="Address">
+      <EntityTypeMapping TypeName="yichuModel.Address">
+        <MappingFragment StoreEntitySet="Address">
+          <ScalarProperty Name="AddressID" ColumnName="AddressID" />
+          <ScalarProperty Name="Address1" ColumnName="Address" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cart">
+      <EntityTypeMapping TypeName="yichuModel.Cart">
+        <MappingFragment StoreEntitySet="Cart">
+          <ScalarProperty Name="CartID" ColumnName="CartID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="GoodsID" ColumnName="GoodsID" />
+          <ScalarProperty Name="Count" ColumnName="Count" />
+          <ScalarProperty Name="CartTime" ColumnName="CartTime" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Flag" ColumnName="Flag" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Coat">
+      <EntityTypeMapping TypeName="yichuModel.Coat">
+        <MappingFragment StoreEntitySet="Coat">
+          <ScalarProperty Name="CoatID" ColumnName="CoatID" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="Season" ColumnName="Season" />
+          <ScalarProperty Name="Design" ColumnName="Design" />
+          <ScalarProperty Name="Material" ColumnName="Material" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="WardrobeID" ColumnName="WardrobeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Collect">
+      <EntityTypeMapping TypeName="yichuModel.Collect">
+        <MappingFragment StoreEntitySet="Collect">
+          <ScalarProperty Name="CollectID" ColumnName="CollectID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="GoodsID" ColumnName="GoodsID" />
+          <ScalarProperty Name="Count" ColumnName="Count" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Color">
+      <EntityTypeMapping TypeName="yichuModel.Color">
+        <MappingFragment StoreEntitySet="Color">
+          <ScalarProperty Name="ColorID" ColumnName="ColorID" />
+          <ScalarProperty Name="Color1" ColumnName="Color" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ComReply">
+      <EntityTypeMapping TypeName="yichuModel.ComReply">
+        <MappingFragment StoreEntitySet="ComReply">
+          <ScalarProperty Name="ComReplyID" ColumnName="ComReplyID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="GoodsCommentID" ColumnName="GoodsCommentID" />
+          <ScalarProperty Name="RepContent" ColumnName="RepContent" />
+          <ScalarProperty Name="RepTime" ColumnName="RepTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Coordinate">
+      <EntityTypeMapping TypeName="yichuModel.Coordinate">
+        <MappingFragment StoreEntitySet="Coordinate">
+          <ScalarProperty Name="CoordinateID" ColumnName="CoordinateID" />
+          <ScalarProperty Name="CoatID" ColumnName="CoatID" />
+          <ScalarProperty Name="ShirtID" ColumnName="ShirtID" />
+          <ScalarProperty Name="NetherGarmentID" ColumnName="NetherGarmentID" />
+          <ScalarProperty Name="SuitID" ColumnName="SuitID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Goods">
+      <EntityTypeMapping TypeName="yichuModel.Goods">
+        <MappingFragment StoreEntitySet="Goods">
+          <ScalarProperty Name="GoodsID" ColumnName="GoodsID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="Season" ColumnName="Season" />
+          <ScalarProperty Name="Material" ColumnName="Material" />
+          <ScalarProperty Name="Style" ColumnName="Style" />
+          <ScalarProperty Name="GoodsImage" ColumnName="GoodsImage" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Unitprice" ColumnName="Unitprice" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="SizeImage" ColumnName="SizeImage" />
+          <ScalarProperty Name="ShangjiaTime" ColumnName="ShangjiaTime" />
+          <ScalarProperty Name="Pageview" ColumnName="Pageview" />
+          <ScalarProperty Name="TotalStorageAmount" ColumnName="TotalStorageAmount" />
+          <ScalarProperty Name="ThumbNum" ColumnName="ThumbNum" />
+          <ScalarProperty Name="GoodsDetails" ColumnName="GoodsDetails" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Goods_Color">
+      <EntityTypeMapping TypeName="yichuModel.Goods_Color">
+        <MappingFragment StoreEntitySet="Goods_Color">
+          <ScalarProperty Name="Goods_ColorID" ColumnName="Goods_ColorID" />
+          <ScalarProperty Name="StorageAmount" ColumnName="StorageAmount" />
+          <ScalarProperty Name="GoodsImage" ColumnName="GoodsImage" />
+          <ScalarProperty Name="GoodsID" ColumnName="GoodsID" />
+          <ScalarProperty Name="ColorID" ColumnName="ColorID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Goods_Size">
+      <EntityTypeMapping TypeName="yichuModel.Goods_Size">
+        <MappingFragment StoreEntitySet="Goods_Size">
+          <ScalarProperty Name="Goods_SizeID" ColumnName="Goods_SizeID" />
+          <ScalarProperty Name="StorageAmount" ColumnName="StorageAmount" />
+          <ScalarProperty Name="GoodsImage" ColumnName="GoodsImage" />
+          <ScalarProperty Name="GoodsID" ColumnName="GoodsID" />
+          <ScalarProperty Name="SizeID" ColumnName="SizeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GoodsComment">
+      <EntityTypeMapping TypeName="yichuModel.GoodsComment">
+        <MappingFragment StoreEntitySet="GoodsComment">
+          <ScalarProperty Name="GoodsCommentID" ColumnName="GoodsCommentID" />
+          <ScalarProperty Name="ComContent" ColumnName="ComContent" />
+          <ScalarProperty Name="ComImage" ColumnName="ComImage" />
+          <ScalarProperty Name="Video" ColumnName="Video" />
+          <ScalarProperty Name="ImageOrNot" ColumnName="ImageOrNot" />
+          <ScalarProperty Name="VideoOrNot" ColumnName="VideoOrNot" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="GoodsID" ColumnName="GoodsID" />
+          <ScalarProperty Name="ComTime" ColumnName="ComTime" />
+          <ScalarProperty Name="ThumbNum" ColumnName="ThumbNum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GoodsCommentsLike">
+      <EntityTypeMapping TypeName="yichuModel.GoodsCommentsLike">
+        <MappingFragment StoreEntitySet="GoodsCommentsLike">
+          <ScalarProperty Name="GoodsCommentsLikeID" ColumnName="GoodsCommentsLikeID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="GoodsCommentID" ColumnName="GoodsCommentID" />
+          <ScalarProperty Name="ThumbTime" ColumnName="ThumbTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GoodsLike">
+      <EntityTypeMapping TypeName="yichuModel.GoodsLike">
+        <MappingFragment StoreEntitySet="GoodsLike">
+          <ScalarProperty Name="GoodsLikeID" ColumnName="GoodsLikeID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="GoodsID" ColumnName="GoodsID" />
+          <ScalarProperty Name="ThumbTime" ColumnName="ThumbTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Grade">
+      <EntityTypeMapping TypeName="yichuModel.Grade">
+        <MappingFragment StoreEntitySet="Grade">
+          <ScalarProperty Name="GradeID" ColumnName="GradeID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="GoodsID" ColumnName="GoodsID" />
+          <ScalarProperty Name="Grade1" ColumnName="Grade" />
+          <ScalarProperty Name="GradeTime" ColumnName="GradeTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NetherGarment">
+      <EntityTypeMapping TypeName="yichuModel.NetherGarment">
+        <MappingFragment StoreEntitySet="NetherGarment">
+          <ScalarProperty Name="NetherGarmentID" ColumnName="NetherGarmentID" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="Season" ColumnName="Season" />
+          <ScalarProperty Name="Design" ColumnName="Design" />
+          <ScalarProperty Name="Material" ColumnName="Material" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="WardrobeID" ColumnName="WardrobeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Note">
+      <EntityTypeMapping TypeName="yichuModel.Note">
+        <MappingFragment StoreEntitySet="Note">
+          <ScalarProperty Name="NoteID" ColumnName="NoteID" />
+          <ScalarProperty Name="Img" ColumnName="Img" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="NoteContent" ColumnName="NoteContent" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="likenum" ColumnName="likenum" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NoteComment">
+      <EntityTypeMapping TypeName="yichuModel.NoteComment">
+        <MappingFragment StoreEntitySet="NoteComment">
+          <ScalarProperty Name="NoteCommentID" ColumnName="NoteCommentID" />
+          <ScalarProperty Name="Nccontent" ColumnName="Nccontent" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="likenum" ColumnName="likenum" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="NoteID" ColumnName="NoteID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NoteLike">
+      <EntityTypeMapping TypeName="yichuModel.NoteLike">
+        <MappingFragment StoreEntitySet="NoteLike">
+          <ScalarProperty Name="NoteLikeID" ColumnName="NoteLikeID" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="NoteID" ColumnName="NoteID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NoteSelect">
+      <EntityTypeMapping TypeName="yichuModel.NoteSelect">
+        <MappingFragment StoreEntitySet="NoteSelect">
+          <ScalarProperty Name="NoteSelectID" ColumnName="NoteSelectID" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="NoteID" ColumnName="NoteID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NoteTrasmit">
+      <EntityTypeMapping TypeName="yichuModel.NoteTrasmit">
+        <MappingFragment StoreEntitySet="NoteTrasmit">
+          <ScalarProperty Name="NoteTrasmitID" ColumnName="NoteTrasmitID" />
+          <ScalarProperty Name="AddContent" ColumnName="AddContent" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="NoteID" ColumnName="NoteID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderDetails">
+      <EntityTypeMapping TypeName="yichuModel.OrderDetails">
+        <MappingFragment StoreEntitySet="OrderDetails">
+          <ScalarProperty Name="OrderDetailsID" ColumnName="OrderDetailsID" />
+          <ScalarProperty Name="GoodsID" ColumnName="GoodsID" />
+          <ScalarProperty Name="Count" ColumnName="Count" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="yichuModel.Orders">
+        <MappingFragment StoreEntitySet="Orders">
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="OrderTime" ColumnName="OrderTime" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Tel" ColumnName="Tel" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Privatemessage">
+      <EntityTypeMapping TypeName="yichuModel.Privatemessage">
+        <MappingFragment StoreEntitySet="Privatemessage">
+          <ScalarProperty Name="PrivatemessageID" ColumnName="PrivatemessageID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Privatemessage_UserID" ColumnName="Privatemessage_UserID" />
+          <ScalarProperty Name="MessageContent" ColumnName="MessageContent" />
+          <ScalarProperty Name="MessageTime" ColumnName="MessageTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Shirt">
+      <EntityTypeMapping TypeName="yichuModel.Shirt">
+        <MappingFragment StoreEntitySet="Shirt">
+          <ScalarProperty Name="ShirtID" ColumnName="ShirtID" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="Season" ColumnName="Season" />
+          <ScalarProperty Name="Design" ColumnName="Design" />
+          <ScalarProperty Name="Material" ColumnName="Material" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="WardrobeID" ColumnName="WardrobeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Size">
+      <EntityTypeMapping TypeName="yichuModel.Size">
+        <MappingFragment StoreEntitySet="Size">
+          <ScalarProperty Name="SizeID" ColumnName="SizeID" />
+          <ScalarProperty Name="Size1" ColumnName="Size" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Suit">
+      <EntityTypeMapping TypeName="yichuModel.Suit">
+        <MappingFragment StoreEntitySet="Suit">
+          <ScalarProperty Name="SuitID" ColumnName="SuitID" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="Season" ColumnName="Season" />
+          <ScalarProperty Name="Design" ColumnName="Design" />
+          <ScalarProperty Name="Material" ColumnName="Material" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="WardrobeID" ColumnName="WardrobeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="U_Attention_U">
+      <EntityTypeMapping TypeName="yichuModel.U_Attention_U">
+        <MappingFragment StoreEntitySet="U_Attention_U">
+          <ScalarProperty Name="U_Attention_UID" ColumnName="U_Attention_UID" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="User1ID" ColumnName="User1ID" />
+          <ScalarProperty Name="User2ID" ColumnName="User2ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="U_Collect_Coordinate">
+      <EntityTypeMapping TypeName="yichuModel.U_Collect_Coordinate">
+        <MappingFragment StoreEntitySet="U_Collect_Coordinate">
+          <ScalarProperty Name="U_Collect_CoordinateID" ColumnName="U_Collect_CoordinateID" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="CoordinateID" ColumnName="CoordinateID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="U_Dislike_Coordinate">
+      <EntityTypeMapping TypeName="yichuModel.U_Dislike_Coordinate">
+        <MappingFragment StoreEntitySet="U_Dislike_Coordinate">
+          <ScalarProperty Name="U_Dislike_CoordinateID" ColumnName="U_Dislike_CoordinateID" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="CoordinateID" ColumnName="CoordinateID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="U_Reply_NoteComment">
+      <EntityTypeMapping TypeName="yichuModel.U_Reply_NoteComment">
+        <MappingFragment StoreEntitySet="U_Reply_NoteComment">
+          <ScalarProperty Name="U_Reply_NoteCommentID" ColumnName="U_Reply_NoteCommentID" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="URNContent" ColumnName="URNContent" />
+          <ScalarProperty Name="Likenum" ColumnName="Likenum" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="NoteCommentID" ColumnName="NoteCommentID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="U_Reply_VideoComment">
+      <EntityTypeMapping TypeName="yichuModel.U_Reply_VideoComment">
+        <MappingFragment StoreEntitySet="U_Reply_VideoComment">
+          <ScalarProperty Name="U_Reply_VideoCommentID" ColumnName="U_Reply_VideoCommentID" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="VCContent" ColumnName="VCContent" />
+          <ScalarProperty Name="Likenum" ColumnName="Likenum" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="VideocommentID" ColumnName="VideocommentID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="yichuModel.Users">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Quanxian" ColumnName="Quanxian" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="HeadImage" ColumnName="HeadImage" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+          <ScalarProperty Name="Wweight" ColumnName="Wweight" />
+          <ScalarProperty Name="Waistline" ColumnName="Waistline" />
+          <ScalarProperty Name="Tel" ColumnName="Tel" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Video">
+      <EntityTypeMapping TypeName="yichuModel.Video">
+        <MappingFragment StoreEntitySet="Video">
+          <ScalarProperty Name="VideoID" ColumnName="VideoID" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Intro" ColumnName="Intro" />
+          <ScalarProperty Name="Adress" ColumnName="Adress" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="likenum" ColumnName="likenum" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VideoComment">
+      <EntityTypeMapping TypeName="yichuModel.VideoComment">
+        <MappingFragment StoreEntitySet="VideoComment">
+          <ScalarProperty Name="VideoCommentID" ColumnName="VideoCommentID" />
+          <ScalarProperty Name="Commentcotent" ColumnName="Commentcotent" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="likenum" ColumnName="likenum" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="VideoID" ColumnName="VideoID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VideoLike">
+      <EntityTypeMapping TypeName="yichuModel.VideoLike">
+        <MappingFragment StoreEntitySet="VideoLike">
+          <ScalarProperty Name="VideoLIkeID" ColumnName="VideoLIkeID" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="VideoID" ColumnName="VideoID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VideoSelect">
+      <EntityTypeMapping TypeName="yichuModel.VideoSelect">
+        <MappingFragment StoreEntitySet="VideoSelect">
+          <ScalarProperty Name="VideoSelectID" ColumnName="VideoSelectID" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="VideoID" ColumnName="VideoID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VideoTrasmit">
+      <EntityTypeMapping TypeName="yichuModel.VideoTrasmit">
+        <MappingFragment StoreEntitySet="VideoTrasmit">
+          <ScalarProperty Name="VideoTrasmitID" ColumnName="VideoTrasmitID" />
+          <ScalarProperty Name="AddContent" ColumnName="AddContent" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="VideoID" ColumnName="VideoID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Wardrobe">
+      <EntityTypeMapping TypeName="yichuModel.Wardrobe">
+        <MappingFragment StoreEntitySet="Wardrobe">
+          <ScalarProperty Name="WardrobeID" ColumnName="WardrobeID" />
+          <ScalarProperty Name="Userid" ColumnName="Userid" />
+          <ScalarProperty Name="Lock" ColumnName="Lock" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GGCC">
+      <EntityTypeMapping TypeName="yichuModel.GGCC">
+        <MappingFragment StoreEntitySet="GGCC">
+          <ScalarProperty Name="GoodsID" ColumnName="GoodsID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="Season" ColumnName="Season" />
+          <ScalarProperty Name="Style" ColumnName="Style" />
+          <ScalarProperty Name="Material" ColumnName="Material" />
+          <ScalarProperty Name="GoodsImage" ColumnName="GoodsImage" />
+          <ScalarProperty Name="StorageAmount" ColumnName="StorageAmount" />
+          <ScalarProperty Name="ShangjiaTime" ColumnName="ShangjiaTime" />
+          <ScalarProperty Name="Unitprice" ColumnName="Unitprice" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="ThumbNum" ColumnName="ThumbNum" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="note_like">
+      <EntityTypeMapping TypeName="yichuModel.note_like">
+        <MappingFragment StoreEntitySet="note_like">
+          <ScalarProperty Name="NoteID" ColumnName="NoteID" />
+          <ScalarProperty Name="img" ColumnName="img" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="notecontent" ColumnName="notecontent" />
+          <ScalarProperty Name="notetime" ColumnName="notetime" />
+          <ScalarProperty Name="noteuserid" ColumnName="noteuserid" />
+          <ScalarProperty Name="notelikeid" ColumnName="notelikeid" />
+          <ScalarProperty Name="liketime" ColumnName="liketime" />
+          <ScalarProperty Name="likenum" ColumnName="likenum" />
+          <ScalarProperty Name="likeuserid" ColumnName="likeuserid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="video_like">
+      <EntityTypeMapping TypeName="yichuModel.video_like">
+        <MappingFragment StoreEntitySet="video_like">
+          <ScalarProperty Name="videoid" ColumnName="videoid" />
+          <ScalarProperty Name="img" ColumnName="img" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="intro" ColumnName="intro" />
+          <ScalarProperty Name="adress" ColumnName="adress" />
+          <ScalarProperty Name="videotime" ColumnName="videotime" />
+          <ScalarProperty Name="videouserid" ColumnName="videouserid" />
+          <ScalarProperty Name="videolikeid" ColumnName="videolikeid" />
+          <ScalarProperty Name="liketime" ColumnName="liketime" />
+          <ScalarProperty Name="num" ColumnName="num" />
+          <ScalarProperty Name="likeuser" ColumnName="likeuser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="Cart_Goods" FunctionName="yichuModel.Store.Cart_Goods">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="yichuModel.Cart_Goods_Result">
+          <ScalarProperty Name="GoodsID" ColumnName="GoodsID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="Season" ColumnName="Season" />
+          <ScalarProperty Name="Material" ColumnName="Material" />
+          <ScalarProperty Name="Style" ColumnName="Style" />
+          <ScalarProperty Name="GoodsImage" ColumnName="GoodsImage" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Unitprice" ColumnName="Unitprice" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="SizeImage" ColumnName="SizeImage" />
+          <ScalarProperty Name="ShangjiaTime" ColumnName="ShangjiaTime" />
+          <ScalarProperty Name="Pageview" ColumnName="Pageview" />
+          <ScalarProperty Name="TotalStorageAmount" ColumnName="TotalStorageAmount" />
+          <ScalarProperty Name="ThumbNum" ColumnName="ThumbNum" />
+          <ScalarProperty Name="GoodsDetails" ColumnName="GoodsDetails" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Cart_Orders" FunctionName="yichuModel.Store.Cart_Orders" />
+    <FunctionImportMapping FunctionImportName="OrderDetails_Goods" FunctionName="yichuModel.Store.OrderDetails_Goods">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="yichuModel.OrderDetails_Goods_Result">
+          <ScalarProperty Name="GoodsID" ColumnName="GoodsID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="Season" ColumnName="Season" />
+          <ScalarProperty Name="Material" ColumnName="Material" />
+          <ScalarProperty Name="Style" ColumnName="Style" />
+          <ScalarProperty Name="GoodsImage" ColumnName="GoodsImage" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Unitprice" ColumnName="Unitprice" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="SizeImage" ColumnName="SizeImage" />
+          <ScalarProperty Name="ShangjiaTime" ColumnName="ShangjiaTime" />
+          <ScalarProperty Name="Pageview" ColumnName="Pageview" />
+          <ScalarProperty Name="TotalStorageAmount" ColumnName="TotalStorageAmount" />
+          <ScalarProperty Name="ThumbNum" ColumnName="ThumbNum" />
+          <ScalarProperty Name="GoodsDetails" ColumnName="GoodsDetails" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

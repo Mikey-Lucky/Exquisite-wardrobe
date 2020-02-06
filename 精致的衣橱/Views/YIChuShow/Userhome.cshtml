@@ -1,0 +1,207 @@
+﻿@model 精致的衣橱.Models.YiChuShowViewModel
+@{
+    Layout = "~/Views/Shared/_UsershowhomeLayout.cshtml";
+    ViewBag.fensinum = Model.fensnum;
+    ViewBag.attentionnum = Model.attentionnum;
+    ViewBag.userid = Model.Userabout.UserID;
+    ViewBag.userimg = Model.Userabout.HeadImage;
+    ViewBag.username = Model.Userabout.UserName;
+}
+<style>
+    #userlike {
+       
+    }
+    .w_user_works_preview {
+        display: inline-block;
+        width: 30%;
+        height: 546px;
+        margin: 18px;
+     }
+    /*.userhome div {
+        display: inline-block;
+        width: 300px;
+        height:300px;
+        overflow: hidden;
+        background-color:#fff;
+    }
+    .userhome div img {
+        width:100%;
+        
+    }*/
+</style>
+<div class="tab_container">
+    <div id="userlike" class="userhome tab_content">
+        <!--userlikevideo-->
+            @foreach (var video in Model.userselectvideo)
+            {
+            <div class="w_user_works_preview works-preview">
+                <div class="works-item">
+                    <a target="_blank" href="@Url.Action("VideoDetail", "YiChuShow", new {id=@video.VideoID})" class="works-image" style="background-image: url('../../Images/Noteimg/@video.Video.Image');">
+                        <!---->
+                        <!---->
+                        <div class="cc_shadow"></div>
+                        <!---->
+                        <div class="image-count">
+                                <span>@video.Video.likenum</span>   
+                        </div>
+                    </a>
+                    <div class="works-info">
+                        <div class="works-time">@video.Time</div>
+                        <div class="works-title">@video.Video.Title</div>
+                        <div class="tag-list">
+                            @if (Convert.ToInt32(Session["User_id"]) == video.Video.UserID)
+                            {
+                          
+                                <input class="videoid" style="display: none" value="@video.VideoID"/>
+                            }
+                        </div>
+                    </div>
+                </div>
+                <section class="cover-container" style="display: none;" data-widget_cache_key="1560515131118">
+                    <form class="cover-content">
+                        <!---->
+                        <div class="form-content"></div> <!---->
+                        <div class="promise-option">
+                            <div class="w_default_button promise-button" data-widget_cache_key="1560515131118">
+                                <button type="button" class="default-button default-button">取消</button>
+                            </div>
+                            <div class="w_default_button promise-button" data-widget_cache_key="1560515131118_1">
+                                <button type="submit" class="default-button normal-button">确定</button>
+                            </div>
+                        </div>
+                    </form>
+                </section>
+            </div>
+        }
+        @foreach (var note in Model.userselectnote)
+        {
+            <div class="w_user_works_preview works-preview">
+                <div class="works-item">
+                    <a target="_blank" href="@Url.Action("NoteDetail", "YiChuShow", new {id=@note.NoteID})" class="works-image" style="background-image: url('../../Images/Noteimg/@note.Note.Img');">
+                        <!---->
+                        <!---->
+                        <div class="cc_shadow"></div>
+                        <!---->
+                        <div class="image-count">
+                                <span>@note.Note.likenum</span>
+                        </div>
+                    </a>
+                    <div class="works-info">
+                        <div class="works-time">@note.Time</div>
+                        <div class="works-title">@note.Note.Title</div>
+                        <div class="tag-list">
+                            @if (Convert.ToInt32(Session["User_id"]) == note.Note.UserID)
+                            {
+                                <input class="noteid" style="display: none" value="@note.NoteID"/>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    <div id="usernote" class="userhome tab_content">
+        @foreach (var note in Model.userupnote)
+        {
+            <div class="w_user_works_preview works-preview">
+                <div class="works-item">
+                    <a target="_blank" href="@Url.Action("NoteDetail", "YiChuShow", new {id=@note.NoteID})" class="works-image" style="background-image: url('../../Images/Noteimg/@note.Img');">
+                        <!---->
+                        <!---->
+                        <div class="cc_shadow"></div>
+                        <!---->
+                        <div class="image-count">      
+                                <span>@note.likenum</span>
+                        </div>
+                    </a>
+                    <div class="works-info">
+                        <div class="works-time">@note.Time</div>
+                        <div class="works-title">@note.Title</div>
+                        <div class="tag-list">
+                            @if (Convert.ToInt32(Session["User_id"]) == note.UserID)
+                            {
+                                <span class="delnote">删除</span>
+                                <input class="noteid" style="display: none" value="@note.NoteID" />
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    <hr />
+    <div id="uservideo" class="userhome tab_content">
+        @foreach (var video in Model.userupvideo)
+        {
+            <div class="w_user_works_preview works-preview">
+                <div class="works-item">
+                    <a target="_blank" href="@Url.Action("VideoDetail", "YiChuShow", new {id=@video.VideoID})" class="works-image" style="background-image: url('../../Images/videoimg/@video.Image');">
+                        <!---->
+                        <!---->
+                        <div class="cc_shadow"></div>
+                        <!---->
+                        <div class="image-count">  
+                                <span>@video.likenum</span>
+                        </div>
+                    </a>
+                    <div class="works-info">
+                        <div class="works-time">@video.Time</div>
+                        <div class="works-title">@video.Title</div>
+                        <div class="tag-list">
+                            @if (Convert.ToInt32(Session["User_id"]) == video.UserID)
+                            {
+                                <span class="delvideo">删除</span>
+                                <input class="videoid" style="display: none" value="@video.VideoID">
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+<script src="~/Scripts/jquery-3.1.1.min.js"></script>
+<script>
+    $(".tab_content").hide();
+    $("ul.tabs li:first").addClass("active").show();
+    $(".tab_content:first").show();
+    $("ul.tabs li").click(function() {
+        $("ul.tabs li").removeClass("active");
+        $(this).addClass("active");
+        $(".tab_content").hide();
+        var activeTab = $(this).find("a").attr("href");
+        $(activeTab).fadeIn();
+        return false;
+    });
+    //删除笔记
+    $(".delnote").click(function () {
+        var noteid = $(this).next().val();
+        $.ajax({
+            type: "get",
+            url: "/YiChuShow/delnote",
+            data: { "noteid":noteid},
+            success: function (data) {
+                alert(data);
+            },
+            async: true
+        });
+    })
+    //删除视频
+    $(".delvideo").click(function () {
+        var videoid = $(this).next().val();
+        $.ajax({
+            type: "get",
+            url: "/YiChuShow/delvideo",
+            data: { "videoid": videoid },
+            success: function (data) {
+                alert(data);
+            },
+            async: true
+        });
+    });
+  
+</script>
+
+
+
+

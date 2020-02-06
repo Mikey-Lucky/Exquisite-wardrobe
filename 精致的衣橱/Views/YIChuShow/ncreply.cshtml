@@ -1,0 +1,11 @@
+﻿@model IEnumerable<Models.U_Reply_NoteComment>
+
+@foreach (var r in Model)
+{
+    <p style="text-indent: 60px">
+        <span>@r.Users.UserName</span>
+        <span style="color: #999" >回复</span>
+        <span>@r.NoteComment.Users.UserName :</span> 
+        <span>@r.URNContent</span>
+    </p>
+}

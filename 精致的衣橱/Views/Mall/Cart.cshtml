@@ -1,0 +1,241 @@
+﻿@model IEnumerable<Models.Cart>
+@{
+
+    Layout = "~/Views/Shared/_LayoutMall.cshtml";
+
+}
+@*<link href="~/Content/bootstrap.min.css" rel="stylesheet" />*@
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+
+<style>
+    #buy{
+        text-decoration:none;
+    }
+    #gengxing{
+
+    }
+</style>
+
+<div class="container" style="margin:40px auto">
+
+    <table class="table">
+        <tr>
+            <th>
+                <input type="checkbox" id="all" />全选
+            </th>
+            <th style="padding-left:40px;">
+                图片
+            </th>
+            <th>
+                数量
+            </th>
+            <th>
+                单价
+            </th>
+            <th>
+                小计
+            </th>
+            <th>编辑</th>
+        </tr>
+
+
+        @foreach (var item in Model)
+        {
+            var sum = item.Goods.Unitprice * item.Count;
+            <tr>
+                <td>
+                    <input data-id="@item.CartID" type="checkbox" name="check" value="@sum" id="#p"/>
+                </td>
+                <td>
+                    <img src="~/Images/GoodsImages/@item.Goods.GoodsImage" style="height:110px;" />
+                </td>
+                <td>
+                    <input type="number" data-Car="@item.CartID" class="in" min="0" max="@item.Goods.TotalStorageAmount" value="@item.Count" style="width:50px;" name="num" id="num"/>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Goods.Unitprice)
+                </td>
+                <td class="sum">
+                    @sum
+                </td>
+                <td>
+                    
+                   <a href="@Url.Action("Delete","Mall",new { CartID=@item.CartID})">删除</a>|
+                    @*<a href="@Url.Action("UpdateCartNum", "Mall")">更新</a>*@
+                    <a id="@item.GoodsID" style="cursor:pointer">更新</a>
+                    <input type="hidden" value="@item.CartID" name="cartid" />
+                    <script>
+                        var num = $("input[name='num']");
+                        var CartID = $("input[name='cartid']");
+                        $(function () {
+                            $("#@item.GoodsID").on("click", function () {
+                                $.ajax({
+                                    type: 'post',
+                                    url: "/Mall/UpdateCartNum",
+                                    data: {
+                                        "num": num.val(),
+                                        "CartID":CartID.val()
+                                    },
+                                    traditional: true,
+                                    success: function (data) {
+                                        alert("更新成功");
+                                        location.href = "/Mall/Cart";
+                                        //num.html(data.num);
+                                       
+                                    },
+                                })
+                            })
+                        })
+                    </script>
+                </td>
+              
+
+            </tr>
+           
+        }
+    </table>
+    <div style="width:300px;margin-left:900px;">
+        <span style="color:palevioletred">总价：</span>
+       
+        <input type="text" id="total" readonly style="width:60px;border:none;background-color:azure">
+        @*<a href="@Url.Action("Order", "Mall")" id="#buy">立即购买</a>*@
+       
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">立即下单</button>
+
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            &times;
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel">
+                            请填写信息：
+                        </h4>
+                    </div>
+                    <div class="modal-body">
+                        <label for="Order_Name">收件人：</label>
+                        <input id="Order_Name" name="Order_Name" />
+                        <br />
+                        <label for="Order_Add">地&nbsp;&nbsp;&nbsp;址：</label>
+                        <input id="Order_Add" name="Order_Add" />
+                        <br />
+                        <label for="Order_Tel">电&nbsp;&nbsp;&nbsp;话：</label>
+                        <input id="Order_Tel" name="Order_Tel" />
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">
+                            关闭
+                        </button>
+                        <button type="button" id="Sub" class="btn btn-primary">
+                            提交
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script>
+    $(function () {
+        var total = $("#total");
+        var sum = 0;
+        var checks = $(":checkbox");
+        var al = $("#all");
+        var checked = $("input[name='check']");
+        al.click(function () {
+            if ($(this).is(":checked")) {
+                for (var i = 1; i < checks.length; i++) {
+                    if (!$(checks[i]).is(":checked")) {
+                        $(checks[i]).prop("checked", true);
+                        sum = parseFloat(sum) + parseFloat($(checks[i]).val());
+                        total.attr("value", sum);
+                    }
+                }
+            }
+            else {
+                for (var i = 1; i < checks.length; i++) {
+                    if ($(checks[i]).is(":checked")) {
+                        $(checks[i]).prop("checked", false);
+                        sum = parseFloat(sum) - parseFloat($(checks[i]).val());
+                        total.attr("value", sum);
+                    }
+                }
+            }
+        })
+        for (var i = 1; i < checks.length; i++) {
+            checks[i].onclick = function () {
+                if (this.checked) {
+                    sum = parseFloat(sum) + parseFloat(this.value);
+                    total.attr("value", sum);
+                }
+                else {
+                    sum = parseFloat(sum) - parseFloat(this.value);
+                    total.attr("value", sum);
+                }
+            }
+        };
+            var name = $("#Order_Name");
+            var add = $("#Order_Add");
+            var tel = $("#Order_Tel");
+           
+            $("#Sub").on("click", function () {
+               
+                var check = [];
+                for (var i = 0; i < checked.length; i++) {
+                    if (checked.eq(i).prop("checked")) {
+                        check.push(parseInt(checked.eq(i).attr("data-id"), 10));
+                    }
+                }
+                if (check.length > 0) {
+                    $.ajax({
+                        type: 'Post',
+                        dataType: 'json',
+                        url: "/Mall/Buy",
+                        data: {
+                            "a": check,
+                            
+                            "name": name.val(),
+                            "userphone": tel.val(),
+                            "address": add.val(),
+                            "total":total.val()
+                        },
+                        traditional: true,
+                        success: function (data) {
+                            alert(data.message);
+                            location.href = "/Mall/Order";
+                            //window.history.go(0);
+                        },
+                        error: function () {
+                            alert("订单失败");
+                        }
+                    });
+                }
+            });
+            //var num = $("input[name='number']");
+            //var cartid = $("input[name='cartid']");
+            //$("#gengxing").on("click", function () {
+            //    $.ajax({
+            //        type: 'post',
+            //        url: "/Mall/UpdateCartNum",
+            //        data: {
+            //            "num": num.val(),
+            //            "CartID":cartid.val()
+            //        },
+            //        traditional: true,
+            //        success: function (data) {
+            //            alert("更新成功");
+            //            location.href = "/Mall/Cart";
+            //            //window.history.go(0);
+            //        },
+            //    })
+            //})
+
+    })
+</script>

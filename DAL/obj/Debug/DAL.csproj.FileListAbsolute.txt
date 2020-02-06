@@ -1,0 +1,48 @@
+E:\工作室\下\精致的衣橱\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+E:\工作室\下\精致的衣橱\DAL\bin\Debug\DAL.dll.config
+E:\工作室\下\精致的衣橱\DAL\bin\Debug\DAL.dll
+E:\工作室\下\精致的衣橱\DAL\bin\Debug\DAL.pdb
+E:\工作室\下\精致的衣橱\DAL\bin\Debug\EntityFramework.dll
+E:\工作室\下\精致的衣橱\DAL\bin\Debug\EntityFramework.SqlServer.dll
+E:\工作室\下\精致的衣橱\DAL\bin\Debug\IDAL.dll
+E:\工作室\下\精致的衣橱\DAL\bin\Debug\Models.dll
+E:\工作室\下\精致的衣橱\DAL\bin\Debug\IDAL.pdb
+E:\工作室\下\精致的衣橱\DAL\bin\Debug\Models.pdb
+E:\工作室\下\精致的衣橱\DAL\bin\Debug\EntityFramework.xml
+E:\工作室\下\精致的衣橱\DAL\bin\Debug\EntityFramework.SqlServer.xml
+E:\工作室\下\精致的衣橱\DAL\bin\Debug\zh-Hans\EntityFramework.resources.dll
+E:\工作室\下\精致的衣橱\DAL\bin\Debug\zh-Hans\EntityFramework.SqlServer.resources.dll
+E:\工作室\下\精致的衣橱\DAL\obj\Debug\DAL.dll
+E:\工作室\下\精致的衣橱\DAL\obj\Debug\DAL.pdb
+F:\毕业项目\精致的衣橱-李琪 吴俊琨\项目源码\DAL\bin\Debug\DAL.dll.config
+F:\毕业项目\精致的衣橱-李琪 吴俊琨\项目源码\DAL\bin\Debug\DAL.dll
+F:\毕业项目\精致的衣橱-李琪 吴俊琨\项目源码\DAL\bin\Debug\DAL.pdb
+F:\毕业项目\精致的衣橱-李琪 吴俊琨\项目源码\DAL\bin\Debug\EntityFramework.dll
+F:\毕业项目\精致的衣橱-李琪 吴俊琨\项目源码\DAL\bin\Debug\EntityFramework.SqlServer.dll
+F:\毕业项目\精致的衣橱-李琪 吴俊琨\项目源码\DAL\bin\Debug\IDAL.dll
+F:\毕业项目\精致的衣橱-李琪 吴俊琨\项目源码\DAL\bin\Debug\Models.dll
+F:\毕业项目\精致的衣橱-李琪 吴俊琨\项目源码\DAL\bin\Debug\IDAL.pdb
+F:\毕业项目\精致的衣橱-李琪 吴俊琨\项目源码\DAL\bin\Debug\Models.pdb
+F:\毕业项目\精致的衣橱-李琪 吴俊琨\项目源码\DAL\bin\Debug\EntityFramework.xml
+F:\毕业项目\精致的衣橱-李琪 吴俊琨\项目源码\DAL\bin\Debug\EntityFramework.SqlServer.xml
+F:\毕业项目\精致的衣橱-李琪 吴俊琨\项目源码\DAL\bin\Debug\zh-Hans\EntityFramework.resources.dll
+F:\毕业项目\精致的衣橱-李琪 吴俊琨\项目源码\DAL\bin\Debug\zh-Hans\EntityFramework.SqlServer.resources.dll
+F:\毕业项目\精致的衣橱-李琪 吴俊琨\项目源码\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+F:\毕业项目\精致的衣橱-李琪 吴俊琨\项目源码\DAL\obj\Debug\DAL.dll
+F:\毕业项目\精致的衣橱-李琪 吴俊琨\项目源码\DAL\obj\Debug\DAL.pdb
+E:\liqi\2016级毕业设计材料（给学生）\liqi\精致的衣橱-李琪 吴俊琨\项目源码\DAL\bin\Debug\DAL.dll.config
+E:\liqi\2016级毕业设计材料（给学生）\liqi\精致的衣橱-李琪 吴俊琨\项目源码\DAL\bin\Debug\DAL.dll
+E:\liqi\2016级毕业设计材料（给学生）\liqi\精致的衣橱-李琪 吴俊琨\项目源码\DAL\bin\Debug\DAL.pdb
+E:\liqi\2016级毕业设计材料（给学生）\liqi\精致的衣橱-李琪 吴俊琨\项目源码\DAL\bin\Debug\EntityFramework.dll
+E:\liqi\2016级毕业设计材料（给学生）\liqi\精致的衣橱-李琪 吴俊琨\项目源码\DAL\bin\Debug\EntityFramework.SqlServer.dll
+E:\liqi\2016级毕业设计材料（给学生）\liqi\精致的衣橱-李琪 吴俊琨\项目源码\DAL\bin\Debug\IDAL.dll
+E:\liqi\2016级毕业设计材料（给学生）\liqi\精致的衣橱-李琪 吴俊琨\项目源码\DAL\bin\Debug\Models.dll
+E:\liqi\2016级毕业设计材料（给学生）\liqi\精致的衣橱-李琪 吴俊琨\项目源码\DAL\bin\Debug\IDAL.pdb
+E:\liqi\2016级毕业设计材料（给学生）\liqi\精致的衣橱-李琪 吴俊琨\项目源码\DAL\bin\Debug\Models.pdb
+E:\liqi\2016级毕业设计材料（给学生）\liqi\精致的衣橱-李琪 吴俊琨\项目源码\DAL\bin\Debug\EntityFramework.xml
+E:\liqi\2016级毕业设计材料（给学生）\liqi\精致的衣橱-李琪 吴俊琨\项目源码\DAL\bin\Debug\EntityFramework.SqlServer.xml
+E:\liqi\2016级毕业设计材料（给学生）\liqi\精致的衣橱-李琪 吴俊琨\项目源码\DAL\bin\Debug\zh-Hans\EntityFramework.resources.dll
+E:\liqi\2016级毕业设计材料（给学生）\liqi\精致的衣橱-李琪 吴俊琨\项目源码\DAL\bin\Debug\zh-Hans\EntityFramework.SqlServer.resources.dll
+E:\liqi\2016级毕业设计材料（给学生）\liqi\精致的衣橱-李琪 吴俊琨\项目源码\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+E:\liqi\2016级毕业设计材料（给学生）\liqi\精致的衣橱-李琪 吴俊琨\项目源码\DAL\obj\Debug\DAL.dll
+E:\liqi\2016级毕业设计材料（给学生）\liqi\精致的衣橱-李琪 吴俊琨\项目源码\DAL\obj\Debug\DAL.pdb

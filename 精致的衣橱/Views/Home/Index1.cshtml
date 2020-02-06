@@ -1,0 +1,783 @@
+﻿@model 精致的衣橱.Models.HomeIndexViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index1</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <link href="~/Content/shouye.css" rel="stylesheet" />
+</head>
+<body>
+    <!--导航-->
+    <style>
+        /* .userinfobox {
+           margin-left: 10px;
+        }*/
+        .userinfobox img {
+            height: 53px;
+            width: 53px;
+            border-radius: 50%;
+            vertical-align: baseline;
+            background-color: #f5f5f5;
+            
+        }
+        .nav {
+            font-family: 'Roboto Mono', monospace;
+            /*width: 1350px;*/
+        }
+        .nav li {
+            font-size: 22px;
+         }
+        #manban2 div {
+            margin-top: 20px;
+        }
+        .central,
+        .foot {
+            width: 85%;
+        }
+        .container {
+            max-width: 1373px;
+        }
+        #manban2 img {
+            max-width: 480px;
+            min-width: 360px;
+            /*height: 297px;*/
+        }
+        #manban2 .topshadow {
+            /*height: 40px;
+            width: 200px;*/
+            /*background-color:rgb(0,0,0);*/
+            /*filter: opacity(50%);*/
+            background: -webkit-linear-gradient(left,rgba(0,0,0,30%),rgba(0,0,0,0));
+            position: absolute;
+            /*top: -20px;*/
+            z-index: 2;
+            color: #f5f5f5;
+        }
+        .footshadow {
+            height: 65px;
+            width: 306px;
+            background-color: rgba(0,0,0,0.3);
+            position: absolute;
+            bottom: 8px;
+            color: #f5f5f5;
+            font-size:16px;
+        }
+        #manban2 .footshadow {
+            height: 65px;
+            width: 306px;
+            background-color: rgba(0,0,0,0.3);
+            /*position: absolute;
+            bottom: 8px;
+            color: #f5f5f5;
+            font-size:16px;*/
+        }
+        #manban2 .topshadow span {
+                text-indent: 2em;
+                line-height: 40px;
+        }
+        #video img {
+           /*height: 120px;
+           width: 120px;*/
+          
+		 /*min-height:120px;*/
+		 /*min-width: 120px; 
+         max-height: 120px;*/
+         max-width: 200px;
+         min-height: 120px;
+         /*height: 120px;*/
+         /*min-width: 120px;*/
+         
+		 vertical-align:middle;
+	   }	
+        #manban2 .more {
+                font-size:16px;
+                display:block;
+            	white-space:nowrap; 
+	            width:19em; 
+	            overflow:hidden; 
+                text-overflow:ellipsis;
+	            /*border:1px solid #000000;*/
+        }
+        #manban2 a {
+            color:rgb(0,0,0);
+        }
+        #manban2 img:hover {
+	        box-shadow: 1px 1px 5px #000000;
+	        margin-top: -1px;
+         }
+        /*.hotvideo:hover img {
+            -webkit-filter: blur(3px); 
+            filter: blur(5px);
+        }*/
+        /*.hotvideo:hover img::before {
+            
+            display:block;
+            position:absolute;
+            height:120px;
+            width:120px;
+            background-color:aqua;
+           
+        }*/
+        .hotvideo:hover img {
+             -webkit-filter: blur(1px); 
+            filter: blur(1px);
+        }
+        .hotvideo:hover::after {
+             position: absolute;
+            content: "\25BA";
+            display: inline-block;
+            line-height:120px;
+            left: 60px;
+            height: 120px;
+            top: 0px;
+            width: 120px;
+            font-size:40px;
+            color: rgba(0,0,0,0.5);
+            background-color: rgba(0,0,0,0);
+        }
+        .goods .footshadow {
+            
+            visibility: hidden;
+            color: white;
+            bottom: 40px;
+            width: 192px;
+            background-color: rgba(0,0,0,0.2);
+            text-align:center;
+            font-size:18px;
+
+        }
+         .goods:hover .footshadow {
+            visibility: visible;
+        }
+        .goods a {
+         color:black;
+        }
+        .goods a:hover {
+            
+            text-decoration: none;
+            color:red;
+        }
+        .panel-title {
+            margin-top: 0;
+            margin-bottom: 0;
+            font-size: 23px;
+            font-family: 'Roboto Mono', monospace;
+        }
+        .panel-default>.panel-heading {
+            color: #333;
+            background-color: #fff;
+            border-color: #fff;
+        }
+        /*************热门商品开始***********************/
+        .rst-item-inner-box-post {
+            position: relative;
+            height: 240px;
+            overflow: hidden;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+        .rst-item-inner-box-post img {
+            width: 100%;
+        }
+        .rst-item-inner-box-post .rst-title-box {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            -webkit-transform: translateY(-50%);
+            -moz-transform: translateY(-50%);
+            z-index: 99;
+            left: 0;
+            right: 0;
+            margin: 0px auto;
+            text-align: center;
+        }
+        .rst-inner-title-box {
+            display: inline-block;
+            position: relative;
+            padding: 10px;
+            z-index: 99;
+            background-color: #fff;
+        }
+        .rst-item-inner-box-post .rst-title-box h3 {
+            padding: 12px 40px;
+            display: inline-block;
+            font-weight: 400;
+            text-transform: uppercase;
+            font-size: 14px;
+            line-height: 22px;
+            margin: 0;
+            display: inline-block;
+            font-family: "Playfair Display";
+            position: relative;
+            z-index: 99;
+            color: #000;
+        }
+        /*************热门商品结束***********************/
+        /***************************笔记展示开始*********************************/
+ .works-detail .w_user_works_preview {
+    margin-top: 20px;
+    margin-left: 18px;
+}
+ .works-content .w_user_works_preview {
+    margin-top: 20px;
+    margin-left: 18px;
+}
+ .works-preview {
+    display: block;
+    float: left;
+}
+.w_user_works_preview {
+    display: inline-block;
+    /*width: 386px;*/
+    width: 23%;
+    height: 546px;
+    margin: 10px;
+}
+.w_user_works_preview .works-item {
+    display: inline-block;
+    position: relative;
+    /*width: 386px;*/
+    width: 100%;
+    height: 546px;
+    background-color: #fff;
+}
+.w_user_works_preview .works-image {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 386px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #e7eaee;
+    cursor: pointer;
+}
+.w_user_works_preview .works-info {
+    position: relative;
+    padding: 12px 20px 20px;
+    height: 160px;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.w_user_works_preview .works-time {
+    margin-bottom: 10px;
+    font-size: .12rem;
+    color: #999;
+}
+ .works-detail .w_user_works_preview .works-item .cc_shadow {
+    display: none;
+}
+ .w_user_works_preview .image-count {
+    position: absolute;
+    bottom: 16px;
+    right: 10px;
+    padding: 0 7px 3px;
+    height: 28px;
+    font-size: .14rem;
+    line-height: 27px;
+    text-align: center;
+    color: #fff;
+    background-color: rgba(0,0,0,.4);
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.w_user_works_preview .works-item .cc_shadow {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    height: 120px;
+    background: -webkit-linear-gradient(top,rgba(85,85,85,0),rgba(17,17,17,.5));
+    background: -o-linear-gradient(top,rgba(85,85,85,0),rgba(17,17,17,.5));
+    background: -moz-linear-gradient(top,rgba(85,85,85,0),rgba(17,17,17,.5));
+    background: linear-gradient(top,rgba(85,85,85,0),rgba(17,17,17,.5));
+    background: -ms-linear-gradient(top,rgba(85,85,85,0),rgba(17,17,17,.5));
+}
+.w_user_works_preview .works-title {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-bottom: 16px;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #444;
+    font-family: 'Roboto Mono', monospace;
+}
+.w_user_works_preview .tag-list {
+    width: 100%;
+    margin-top: 5px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.w_user_works_preview .works-count-info {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    padding: 0 20px;
+    font-size: .14rem;
+    color: #999;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.w_user_works_preview .works-count-info .cc_info_left {
+    padding-bottom: 17px;
+}
+.w_user_works_preview .works-count-info .cc_info_left .cc_left_tag {
+    display: inline-block;
+    height: 24px;
+}
+.w_user_works_preview .works-count-info .cc_info_left .cc_left_tag .iconfont {
+    font-size: 14px;
+    color: #ccc;
+}
+.w_user_works_preview .works-count-info .cc_info_right {
+    position: absolute;
+    right: 10px;
+    bottom: 7px;
+}
+/***************************展示结束*********************************/
+/************最新商品开始*************/
+.blog-post:nth-child(1) {
+    margin: 0 0 25px;
+}
+.blog-post {
+    border: 1px solid #eaeaea;
+    position: relative;
+}
+
+body a {
+    text-decoration: none;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+}
+.blog-post img {
+    width: 100%;
+}
+.img-responsive, .thumbnail > img, .thumbnail a > img, .carousel-inner > .item > img, .carousel-inner > .item > a > img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+.text {
+    position: absolute;
+    top: 37.1%;
+    left: 0%;
+}
+.text a {
+    text-decoration: none;
+    font-size: 14px;
+    color: #fff;
+    padding: 9px 20px;
+    background: #F896A9;
+}
+.admin-tag {
+    padding: 1em;
+}
+.admin-tag p {
+    color: #ababab;
+    font-size: 14px;
+}
+a.button-more {
+    font-size: 14px;
+    padding: 6px 18px;
+    color: #fff;
+}
+a.hvr-rectangle-out {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    position: relative;
+    background: #F896A9;
+    -webkit-transition-property: color;
+    transition-property: color;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+}
+/************最新商品结束*************/
+        .foot li {
+            display: inline-block;
+            list-style-image: url(../shouyeimg/logo.png);
+            height: 100px;
+            width: 100px;
+            line-height: 50px;
+            margin-left: 37px;
+        }
+            .foot li a {
+                color: #000;
+            }
+</style>
+        <!-- 首页第一块板块 -->
+        <div class="shouyeban1 ">
+            <div class="central">
+                <div class="zong-nav">
+                    <div class="nav">
+                        <ul>
+                            <li><a href="#">首页</a></li>
+                            <li><a href="@Url.Action("Index","YiChu",new {Userid= @Session["User_id"]})">我的衣橱</a></li>
+                            <li><a href="@Url.Action("Index","YiChuShow")">衣橱秀</a></li>
+                            <li><a href="@Url.Action("Index","Mall")">商城</a></li>
+                            <li><a href="@Url.Action("RecomGoods","Recommend")">个性推荐</a></li>
+                            <li class="logo">JZYC</li>
+                            @if (Session["User_id"] != null)
+                            {
+                                @*<li class="zhuxiaobox" style="display: none;"><span class="iconfont zhuxiao">&#xe610;</span></li>*@
+                                <li  class="userinfobox">
+                                <a href="@Url.Action("Index","YiChu",new {Userid= @Session["User_id"]})">
+                                    <img class="daohangimg" src="/Images/HeadImages/@Session["User_image"]" />
+                                </a> 
+                                    <span style="font-size: 16px;"><a href="@Url.Action("RegisterLogin", "Users")" style="color:#f5f5f5">切换账号</a></span>
+                                </li>
+                                @*<li>
+                                    
+                                </li>*@
+                                   
+                            }
+                            else
+                            {
+                                <li class="userinfobox " >
+                                   <a href="@Url.Action("RegisterLogin", "Users")">
+                                   <img class="daohangimg" src="~/Images/yichu/wode.png"/>
+                                    </a>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+                <a href="@Url.Action("Index","YiChu",new {Userid= @Session["User_id"]})">
+                    <div class="yichu">
+                        <div class="leftdoor">
+                            <img src="~/shouyeimg/leftzheng.jpg" />
+                            <img src="~/shouyeimg/fan.jpg" />
+                        </div>
+                        <div class="rightdoor">
+                            <img src="~/shouyeimg/rightzheng.jpg" />
+                            <img src="~/shouyeimg/fan.jpg" />
+                        </div>
+                        <div class="dandoor">
+                            <img src="~/shouyeimg/danzheng.jpg" />
+                            <img src="~/shouyeimg/fan.jpg" />
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="foot">
+                <ul>
+                    <li><a href="#note">热门笔记</a> </li>
+                    <li><a href="#video">热门视频</a> </li>
+                    <li><a href="#xs">新品上架</a></li>
+                    <li><a href="#rs">热销商品</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container">
+        <!-- 热门商品-->
+        <div id="rs" class="panel panel-default">
+                <div class="panel-heading">
+                    <div id="inner-header" class="">
+                        <div class="container">
+                            <div class="rst-logo  text-center ">
+                                <a href="#">
+                                    <img src="~/Images/yichu/热销商品.jpg" />
+                                </a>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                    @*<h2 class="panel-title" >
+                    热门商品<span class="label label-danger">最热</span>
+                </h2>*@
+                </div>
+                <div class="panel-body row" style="text-overflow:ellipsis">
+                    @foreach (var g in Model.hotgoods)
+                    {
+                        <div class="col-md-4 col-sm-4 col-xs-12 rst-item-box-post">
+                            <div class="rst-item-inner-box-post">
+                                <a href="@Url.Action("GoodsDetails", "Mall", new { id = @g.GoodsID })">
+                                    <div class="fully-figcaption">
+                                        <img alt="" src="/Images/Noteimg/@g.GoodsImage" />
+                                        <div class="rst-title-box">
+                                            <div class="rst-inner-title-box">
+                                                <h3>@g.Name</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+
+                            </div>
+                        </div>
+                    }
+                    <script>
+                    $(function () { $("[data-toggle='tooltip']").tooltip(); });
+                    </script>
+                </div>
+            </div>
+        <!-- 热门笔记-->
+        <div id="note" class="panel panel-default">
+            <div class="panel-heading">
+                <div id="inner-header" class="">
+                    <div class="container">
+                        <div class="rst-logo  text-center ">
+                            <a href="#">
+                                <img src="~/Images/yichu/热门笔记.jpg" />
+                            </a>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                @*<h2 class="panel-title" >
+                    笔记排行榜<span class="label label-danger">最热</span>
+                </h2>*@
+            </div>
+            <div class="panel-body  userhome tab_content"  >
+                @foreach (var note in Model.notes)
+                {
+                    <div class="w_user_works_preview works-preview" >
+                        <div class="works-item">
+                            <a target="_blank" href="@Url.Action("NoteDetail", "YiChuShow", new {id=@note.NoteID})" class="works-image" style="background-image: url('../../Images/Noteimg/@note.Img');">
+                                <!---->
+                                <!---->
+                                <div class="cc_shadow"></div>
+                                <!---->
+                                <div class="image-count">
+                                    <span>@note.likenum</span>
+                                </div>
+                            </a>
+                            <div class="works-info">
+                                <div class="works-time">@note.Time</div>
+                                <div class="works-title">@note.Title</div>
+                                <div class="tag-list">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+            @*<div id="usernote" class="userhome tab_content">
+                @foreach (var note in Model.notes)
+                {
+                    <div class="w_user_works_preview works-preview">
+                        <div class="works-item">
+                            <a target="_blank" href="@Url.Action("NoteDetail", "YiChuShow", new {id=@note.NoteID})" class="works-image" style="background-image: url('../../Images/Noteimg/@note.Img');">
+                                <!---->
+                                <!---->
+                                <div class="cc_shadow"></div>
+                                <!---->
+                                <div class="image-count">
+                                    <span>@note.likenum</span>
+                                </div>
+                            </a>
+                            <div class="works-info">
+                                <div class="works-time">@note.Time</div>
+                                <div class="works-title">@note.Title</div>
+                                <div class="tag-list">
+                                    @if (Convert.ToInt32(Session["User_id"]) == note.UserID)
+                                    {
+                                        <span class="delnote">删除</span>
+                                        <input class="noteid" style="display: none" value="@note.NoteID" />
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>*@
+        </div>
+       <!--热门视频-->
+        <div class="panel panel-default" id="video">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        热门视频<span style="padding-left:950px;"><a href="@Url.Action("Index","YiChuShow")" style="color: #000">更多>></a></span>
+                    </h3>
+                </div>
+                <div class="panel-body row ">
+                    @foreach (var v in Model.videos)
+                    {
+                        <a href="@Url.Action("VideoDetail", "YiChuShow", new {id=@v.VideoID})">
+                            <div class="col-md-2 col-sm-4 hotvideo">
+                                <div style="width: 120px;height: 120px;overflow: hidden">
+                                    <img src="/Images/videoimg/@v.Image" data-toggle="tooltip" data-placement="right" title="" />
+                                </div>
+                            </div>
+                        </a>
+                    }
+                </div>
+            </div>
+        <!-- 新品上架-->
+        <div id="xs" class="panel panel-default">
+                <div class="panel-heading">
+                    <div id="inner-header" class="">
+                        <div class="container">
+                            <div class="rst-logo  text-center ">
+                                <a href="#">
+                                    <img src="~/Images/yichu/新品上架.jpg" />
+                                </a>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body row"  style="text-overflow:ellipsis">
+                    @foreach (var g in Model.newgoods)
+                    {
+                        @*<div class="col-md-2 col-sm-4 goods" style="height:340px;">
+                                <a href="@Url.Action("GoodsDetails", "Mall", new { id = @g.GoodsID })">
+                                <img src="/Images/Noteimg/@g.GoodsImage" style="width:  100%;height: 300px;" />
+                                <span class="label label-default" style="margin-top: -20px;">@g.Style</span>
+                                <span>@g.Name</span>
+                                </a>
+                                <div class="footshadow">
+                                    $: @g.Unitprice
+                                </div>
+                    </div>*@
+                    <div class="col-md-4 blog-post-grids">
+                        <div class="blog-post">
+                            <a href="@Url.Action("GoodsDetails", "Mall", new { id = @g.GoodsID })"><img class="img-responsive"  src="/Images/Noteimg/@g.GoodsImage"></a>
+                            <div class="text">
+                                <a href="single.html"> @g.Name</a>
+                            </div>
+                            <div class="admin-tag">
+                                <p>@g.ShangjiaTime</p>
+                                <p class="erat">
+                                   @g.Style
+                                </p>
+                                <a class="hvr-rectangle-out button-more" href="@Url.Action("GoodsDetails", "Mall", new { id = @g.GoodsID })">购买<span> </span></a>
+                            </div>
+                        </div>
+                    </div>
+                    }
+                    <script>
+                    $(function () { $("[data-toggle='tooltip']").tooltip(); });
+                    </script>
+                </div>
+               
+            </div>
+        </div>
+        <br />
+        <hr />
+     
+      
+        <footer>
+            <style>
+                #index_footer {
+                    background: #333;
+                    padding: 25px 0 0;
+                }
+                .wrapper-996 {
+    width: 996px;
+}
+.wrapper {
+    position: relative;
+    margin: 0 auto;
+    border: 0;
+}
+#index_footer .column {
+    width: 200px;
+    display: inline-block;
+    vertical-align: top;
+}
+#index_footer .column > a.title {
+    font-size: 16px;
+    color: #ddd;
+    padding-bottom: 20px;
+}
+#index_footer .column > a {
+    color: #bbb;
+    display: block;
+    padding-bottom: 15px;
+    text-decoration: none;
+}
+#index_footer .follow-us {
+    position: absolute;
+    right: 0;
+    top: 0;
+    border: 1px solid #555;
+        border-top-width: 1px;
+        border-right-width: 1px;
+        border-bottom-width: 1px;
+        border-left-width: 1px;
+    border-width: 0 1px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 20px;
+    width: 248px;
+}
+#index_footer .wrapper.wrapper-996.bottom {
+    background-color: #000;
+    color: #999;
+    margin-top: 30px;
+    height: 60px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+#index_footer .wrapper.wrapper-996.bottom .divider {
+    color: #555;
+}
+#index_footer .wrapper.wrapper-996.bottom a {
+    color: #999;
+}
+            </style>
+            <div id="index_footer">
+            <div class="wrapper wrapper-996">
+                <div class="column">
+                <a href="#" class="title">精致的衣橱首页</a>
+                <a href="#" rel="nofollow">衣橱秀场</a>
+                <a href="#">商城</a>
+                <a href="#" rel="nofollow">个性推荐</a>
+                </div>
+                <div class="column">
+                <a class="title">联系与合作</a>
+                <a href="#" rel="nofollow">联系我们</a>
+                <a href="#" rel="nofollow">用户反馈</a>
+                <a href="#" rel="nofollow">精致衣橱 LOGO 标准文档</a>
+                </div>
+                <div class="column">
+                <a class="title">移动客户端</a>
+                <a href="#" rel="nofollow">精致 iPhone 版 木有</a>
+                <a href="#" rel="nofollow">精致 Android 版 木有</a>
+                <a href="#" rel="nofollow">精致 HD 木有</a>
+                </div>
+                <div class="column follow-us">
+                <a class="title">关注我们</a>
+                <a href="#" target="_blank" rel="nofollow">新浪微博：你猜</a>
+                <a>联系客服：<span class="qiyu chat">在线客服</span></a>
+                <a class="weixin">官方微信：木有
+                </a>
+                </div>
+                </div>
+                <div class="wrapper wrapper-996 bottom">© 工作室3522A &nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp;
+                <a target="_blank" href="#">wjk lq &nbsp;&nbsp;</a>
+                </div>
+            </div>
+        </footer>
+        <br />
+
+</body>
+</html>

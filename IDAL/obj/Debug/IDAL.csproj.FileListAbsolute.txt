@@ -1,0 +1,30 @@
+E:\工作室\下\精致的衣橱\IDAL\bin\Debug\IDAL.dll
+E:\工作室\下\精致的衣橱\IDAL\bin\Debug\IDAL.pdb
+E:\工作室\下\精致的衣橱\IDAL\bin\Debug\Models.dll
+E:\工作室\下\精致的衣橱\IDAL\bin\Debug\EntityFramework.dll
+E:\工作室\下\精致的衣橱\IDAL\bin\Debug\Models.pdb
+E:\工作室\下\精致的衣橱\IDAL\bin\Debug\EntityFramework.xml
+E:\工作室\下\精致的衣橱\IDAL\bin\Debug\zh-Hans\EntityFramework.resources.dll
+E:\工作室\下\精致的衣橱\IDAL\obj\Debug\IDAL.csprojResolveAssemblyReference.cache
+E:\工作室\下\精致的衣橱\IDAL\obj\Debug\IDAL.dll
+E:\工作室\下\精致的衣橱\IDAL\obj\Debug\IDAL.pdb
+F:\毕业项目\精致的衣橱-李琪 吴俊琨\项目源码\IDAL\bin\Debug\IDAL.dll
+F:\毕业项目\精致的衣橱-李琪 吴俊琨\项目源码\IDAL\bin\Debug\IDAL.pdb
+F:\毕业项目\精致的衣橱-李琪 吴俊琨\项目源码\IDAL\bin\Debug\Models.dll
+F:\毕业项目\精致的衣橱-李琪 吴俊琨\项目源码\IDAL\bin\Debug\EntityFramework.dll
+F:\毕业项目\精致的衣橱-李琪 吴俊琨\项目源码\IDAL\bin\Debug\Models.pdb
+F:\毕业项目\精致的衣橱-李琪 吴俊琨\项目源码\IDAL\bin\Debug\EntityFramework.xml
+F:\毕业项目\精致的衣橱-李琪 吴俊琨\项目源码\IDAL\bin\Debug\zh-Hans\EntityFramework.resources.dll
+F:\毕业项目\精致的衣橱-李琪 吴俊琨\项目源码\IDAL\obj\Debug\IDAL.csprojResolveAssemblyReference.cache
+F:\毕业项目\精致的衣橱-李琪 吴俊琨\项目源码\IDAL\obj\Debug\IDAL.dll
+F:\毕业项目\精致的衣橱-李琪 吴俊琨\项目源码\IDAL\obj\Debug\IDAL.pdb
+E:\liqi\2016级毕业设计材料（给学生）\liqi\精致的衣橱-李琪 吴俊琨\项目源码\IDAL\bin\Debug\IDAL.dll
+E:\liqi\2016级毕业设计材料（给学生）\liqi\精致的衣橱-李琪 吴俊琨\项目源码\IDAL\bin\Debug\IDAL.pdb
+E:\liqi\2016级毕业设计材料（给学生）\liqi\精致的衣橱-李琪 吴俊琨\项目源码\IDAL\bin\Debug\Models.dll
+E:\liqi\2016级毕业设计材料（给学生）\liqi\精致的衣橱-李琪 吴俊琨\项目源码\IDAL\bin\Debug\EntityFramework.dll
+E:\liqi\2016级毕业设计材料（给学生）\liqi\精致的衣橱-李琪 吴俊琨\项目源码\IDAL\bin\Debug\Models.pdb
+E:\liqi\2016级毕业设计材料（给学生）\liqi\精致的衣橱-李琪 吴俊琨\项目源码\IDAL\bin\Debug\EntityFramework.xml
+E:\liqi\2016级毕业设计材料（给学生）\liqi\精致的衣橱-李琪 吴俊琨\项目源码\IDAL\bin\Debug\zh-Hans\EntityFramework.resources.dll
+E:\liqi\2016级毕业设计材料（给学生）\liqi\精致的衣橱-李琪 吴俊琨\项目源码\IDAL\obj\Debug\IDAL.csprojResolveAssemblyReference.cache
+E:\liqi\2016级毕业设计材料（给学生）\liqi\精致的衣橱-李琪 吴俊琨\项目源码\IDAL\obj\Debug\IDAL.dll
+E:\liqi\2016级毕业设计材料（给学生）\liqi\精致的衣橱-李琪 吴俊琨\项目源码\IDAL\obj\Debug\IDAL.pdb

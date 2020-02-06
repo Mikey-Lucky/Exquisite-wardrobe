@@ -1,0 +1,577 @@
+﻿@model 精致的衣橱.Models.YiChuViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <style>
+        /*body {
+            background-image: url('../../Images/yichu/wu.jpg');
+            background-size: cover;
+        }*/
+        ul {
+           margin-top: 39px;
+           margin-bottom: 10px;
+         }
+        li {
+        list-style: none;
+        }
+        .main {
+            height: 700px;
+            width: 85%;
+            margin:20px auto;
+        }
+        /*左侧布局开始*/
+         .main-l {
+            position: relative;
+            height: 100%;
+            width: 20%;
+            float: left;
+            background-color: white;
+        }
+         .userinfo img { /*头像*/
+            height: 77px;
+            width: 77px;
+            border-radius: 50%;
+            margin-left: 27px;
+            margin-bottom: 20px;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+            /*导航开始*/
+            .main-l ul {
+            margin-left: 50px;
+            }
+            .main-l .daohang li {
+             display: block;
+             height: 80px;
+            }
+            .main-l .daohang a {
+            color: darkgray;
+            }
+            /*导航结束*/
+             #footer {
+            position: absolute;
+            bottom: 0px;
+            width: 100%;
+            height: 124px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-image: linear-gradient(to top,rgba(255,255,255,0) 42%,rgba(255,255,255,1) 100%), url('../../Images/yichu/麋鹿素材.jpg');
+            /*background-blend-mode: multiply;*/
+            }
+        /*左侧布局结束*/
+        /*右侧布局开始*/
+        .main-r {
+            min-height: 800px;
+            /*height: 100%;*/
+            width: 79.9%;
+            float: right;
+            background-color: #f5f5f5;
+        }       
+            /*导航开始*/
+            .main-r .daohang {
+               margin-top: 30px;
+            }
+            .main-r .daohang h2
+            {
+              margin-left:50px;
+            }
+             .category li {
+               display: inline-block;
+               width: 100px;
+
+            }
+           .category li a {
+               color: #000;
+               font-family: 'Roboto Mono', monospace;
+               font-size: 18px;
+           }
+
+                .add {/*添加*/
+                width: 54px;
+                background-color: rgb(202,220,222);
+                border-radius: 50%;
+                color: white;
+                text-align: center;
+                line-height: 56px;
+                /*margin-left: 566px;*/
+                margin: 10px;
+                }
+                /*搜索开始*/
+                .search {
+                   display: inline-block;
+                }
+                .search .glyphicon {
+                      top: 0px;
+                }
+                .search span,
+                .search input {
+                   height: 26px;
+                   background-color: white;
+                   float:left;
+                   line-height: 26px;
+                   text-indent: 1em;
+                 }
+                .search input {
+                    outline-color: white;
+                    border: 0px;
+                }
+                .search span:first-child {
+                  width:26px;
+                  border-radius:50% 0 0 50%;
+                }
+                .search span:last-child {
+                  width:26px;
+                  border-radius:0 50% 50% 0;
+                }
+                /*搜索结束*/
+            /*导航结束*/
+            /*内容布局开始*/
+              .tab-pane img {
+               height: 200px;
+               width: 200px;
+               margin-top: 10px;
+              }
+              
+              .tab-pane span {/*衣种标签*/
+               display: inline-block;
+               width: 56px;
+               color: white;
+               background-color: rgb(202,220,222);
+               text-align: center;
+               margin-top: 25px;
+              }
+            #todayclothes {
+                /*position: relative;*/
+            }
+            #todayallc,
+            #todaydapei
+             {
+                 float: left;
+            }
+              #todayallc div {
+                 
+                  /*width: 400px;
+                  height:100px;*/
+                  /*overflow-x: auto;*/
+              }
+            /*内容布局结束*/   
+        /*右侧布局结束*/
+        .ml {
+            margin-left: 38px;
+        }
+            .ml a {
+                color: #a9a9a9;
+            }
+    </style>
+</head>
+<body>
+    <div class="daohang">
+        @*<h2 style="display: inline-block;">Clothes</h2>*@
+        @*<div class="search">搜索
+                <span class="glyphicon glyphicon-search"></span>
+                <input placeholder="输入你想查询衣服" />
+                <span></span>
+            </div>*@
+        @*<img src="~/Images/yichu/1.jpg" />*@
+        <a href="@Url.Action("AddClothes","YiChu")">
+            <span class="glyphicon glyphicon-plus add">
+            </span>
+        </a>
+    </div>
+      <div class="main">
+          <div class="main-l">
+              <h2>YiChu</h2>
+              <div class="userinfo">
+                  <img src="/Images/HeadImages/@Model.Userabout.HeadImage"/>
+                  <p style="display: inline-block;">@Model.Userabout.UserName</p>
+              </div>
+              <div class="daohang">
+                  <ul id="#yichudaohang">
+                      <li>
+                          <a href="@Url.Action("Index1","Home")">
+                              <span class="glyphicon glyphicon-home"></span>
+                              回到首页
+                          </a>
+                      </li>
+                      <li class="active">
+                          <a href="#myclothes" data-toggle="tab">
+                              <span class="glyphicon glyphicon-paperclip"></span>
+                              我的衣服
+                          </a>
+                      </li>
+                      <li id="chufa">
+                          <a href="#todayclothes" data-toggle="tab">
+                              <span class="glyphicon glyphicon-send"></span>
+                              今日推荐
+                          </a>
+                      </li>
+                  </ul>
+              </div> 
+              @*<div id="footer">
+                  
+              </div>*@
+          </div>
+          <div class="main-r">
+           
+              <div class="content tab-content" id="yichuContent">
+                  <div id="myclothes" class="tab-pane in active">
+                      <div class="category">
+                          <ul id="myTab">
+                              <li class="active">
+                                  <a href="#spring" data-toggle="tab">春Spring</a>
+                              </li>
+                              <li>
+                                  <a href="#summer" data-toggle="tab">夏Summer</a>
+                              </li>
+                              <li>
+                                  <a href="#autumn" data-toggle="tab">秋Autumn</a>
+                              </li>
+                              <li>
+                                  <a href="#winter" data-toggle="tab">冬Winter</a>
+                              </li>
+                          </ul>
+                      </div>
+                      <div class="content tab-content" id="myTabContent">
+                          <div class="tab-pane in active" id="spring">
+                              <div>
+                                  @if (Model.springcoat != null)
+                                  { <span>外套</span>}
+                                  <div class="ml"> 
+                                      @foreach (var c in Model.springcoat)
+                                      {
+                                          <img src="/Images/Coat/@c.Image" />
+                                        <a class="delcoat">删除</a>
+                                        <input class="coatid" style="display: none" value="@c.CoatID">
+                                      }
+                                  </div>
+                              </div>
+                              <div>
+                                  <span>上单衣</span>
+                                  <div class="ml">
+                                      @foreach (var s in Model.springshirt)
+                                      {
+                                          <a href="@Url.Action("ShirtDetail", "YiChu", new {id=@s.ShirtID})">
+                                              @*@Html.ActionLink("ShirtDetail", "ShirtDetail", new { id =@s.ShirtID})*@
+                                              <img src="/Images/shirt/@s.Image" />
+                                          </a>
+                                          <a class="delshirt">删除</a>
+                                          <input class="shirtid" style="display: none" value="@s.ShirtID">
+                                      }
+                                  </div>
+                              </div>
+                              <div>
+                                  <span>下装</span>
+                                  <div class="ml">
+                                      @foreach (var n in Model.springnethergarment)
+                                      {
+                                          <img src="/Images/NetherGarment/@n.Image" />
+                                          <a class="delne">删除</a>
+                                          <input class="neid" style="display: none" value="@n.NetherGarmentID">
+                                      }
+                                  </div>
+                              </div>
+                              <div>
+                                  <span>套装</span>
+                                  <div class="ml">
+                                      @foreach (var s in Model.springsuit)
+                                      {
+                                          <img src="/Images/Suit/@s.Image" />
+                                        <a class="delsuit">删除</a>
+                                        <input class="suitid" style="display: none" value="@s.SuitID">
+                                      }
+                                  </div>
+                              </div>   
+                          </div>
+                          <div class="tab-pane " id="summer">
+                              <div>
+                                  @if (Model.summercoat.FirstOrDefault()!=null)
+                                  {
+                                      <span>外套</span>
+                                  }
+                                  <div class="ml">
+                                      @foreach (var c in Model.summercoat)
+                                      {
+
+                                          <img src="/Images/Coat/@c.Image" />
+                                        <a class="delcoat">删除</a>
+                                            <input class="coatid" style="display: none" value="@c.CoatID">
+                                      }
+                                  </div>
+
+                              </div>
+                              <div>
+                                  @if (Model.summershirt.FirstOrDefault() != null)
+                                  { 
+                                       <span>上单衣</span>
+                                  }
+                                  <div class="ml">
+                                      @foreach (var s in Model.summershirt)
+                                      {
+                                          <a href="@Url.Action("ShirtDetail", "YiChu", new {id=@s.ShirtID})">
+                                              <img src="/Images/shirt/@s.Image" />
+                                          </a>
+                                        <a class="delshirt">删除</a>
+                                        <input class="shirtid" style="display: none" value="@s.ShirtID">
+                                      }
+                                  </div>
+                              </div>
+                              <div>
+                                  <span>下装</span>
+                                  <div class="ml">
+                                      @foreach (var n in Model.summernethergarment)
+                                      {
+                                          <img src="/Images/NetherGarment/@n.Image" />
+                                        <a class="delne">删除</a>
+                                            <input class="neid" style="display: none" value="@n.NetherGarmentID">
+                                      }
+                                  </div>
+                              </div>
+                              <div>
+                                  <span>套装</span>
+                                  <div class="ml">
+                                      @foreach (var s in Model.summersuit)
+                                      {
+                                          <img src="/Images/Suit/@s.Image" />
+                                        <a class="delsuit">删除</a>
+                                        <input class="suitid" style="display: none" value="@s.SuitID">
+                                       
+                                      }
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="tab-pane " id="autumn">
+                              <div>
+                                   <span>外套</span>
+                                  <div class="ml">
+                                      @foreach (var c in Model.autumncoat)
+                                      {
+                                          <img src="/Images/Coat/@c.Image" />
+                                          <a class="delcoat">删除</a>
+                                         <input class="coatid" style="display: none" value="@c.CoatID">
+                                      }
+                                  </div>
+                              </div>
+                              <div>
+                                   <span>上单衣</span> 
+                                  <div class="ml">
+                                      @foreach (var s in Model.autumnshirt)
+                                      {
+                                          <a href="@Url.Action("ShirtDetail", "YiChu", new {id=@s.ShirtID})">
+                                              @*@Html.ActionLink("ShirtDetail", "ShirtDetail", new { id =@s.ShirtID})*@
+                                              <img src="/Images/shirt/@s.Image" />
+                                          </a>
+                                        <a class="delshirt">删除</a>
+                                        <input class="shirtid" style="display: none" value="@s.ShirtID">
+                                      }
+                                  </div>
+                              </div>
+                              <div>
+                                   <span>下装</span>
+                                  <div class="ml">
+                                      @foreach (var n in Model.autumnnethergarment)
+                                      {
+                                          <img src="/Images/NetherGarment/@n.Image" />
+                                        <a class="delne">删除</a>
+                                            <input class="neid" style="display: none" value="@n.NetherGarmentID">
+                                      }
+                                  </div>
+                              </div>
+                              <div>
+                                  <span>套装</span>
+                                  <div class="ml">
+                                      @foreach (var s in Model.autumnsuit)
+                                      {
+                                          <img src="/Images/Suit/@s.Image" />
+                                        <a class="delsuit">删除</a>
+                                        <input class="suitid" style="display: none" value="@s.SuitID">
+
+                                      }
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="tab-pane " id="winter">
+                              <div>
+                                  <span>外套</span>
+                                  <div class="ml">
+                                      @foreach (var c in Model.wintercoat)
+                                      {
+                                          <img src="/Images/Coat/@c.Image" />
+                                           <a class="delcoat">删除</a>
+                                            <input class="coatid" style="display: none" value="@c.CoatID">
+                                      }
+                                  </div>
+                              </div>
+                              <div>
+                                  <span>上单衣</span>
+                                  <div class="ml">
+                                      @foreach (var s in Model.wintershirt)
+                                      {
+                                          <a href="@Url.Action("ShirtDetail", "YiChu", new {id=@s.ShirtID})">
+                                              @*@Html.ActionLink("ShirtDetail", "ShirtDetail", new { id =@s.ShirtID})*@
+                                              <img src="/Images/shirt/@s.Image" />
+                                          </a>
+                                        <a class="delshirt">删除</a>
+                                        <input class="shirtid" style="display: none" value="@s.ShirtID">
+                                      }
+                                  </div>
+                              </div>
+                              <div>
+                                  <span>下装</span>
+                                  <div class="ml">
+                                      @foreach (var n in Model.autumnnethergarment)
+                                      {
+                                          <img src="/Images/NetherGarment/@n.Image" />
+                                        <a class="delne">删除</a>
+                                            <input class="neid" style="display: none" value="@n.NetherGarmentID">
+                                      }
+                                  </div>
+                              </div>
+                              <div>
+                                  <span>套装</span>
+                                  <div class="ml">
+                                      @foreach (var s in Model.wintersuit)
+                                      {
+                                          <img src="/Images/Suit/@s.Image" />
+                                           <a class="delsuit">删除</a>
+                                            <input class="suitid" style="display: none" value="@s.SuitID">
+                                      }
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <script>
+	              $(function () {
+		          $('#myTab li:eq(1) a').tab('show');});
+                      </script>
+                  </div>
+                  <div id="todayclothes" class="tab-pane">
+                      <div id="todayallc">
+                          @Html.Action("TianqiClothes")
+                      </div>
+                      @*<div id="todaydapei">
+                          <p>为你搭配</p>
+                          @Html.Action("dapeiClothes")
+                      </div>*@
+                  </div>
+              </div>
+                  <script>
+                      $(function () {
+                          $('#yichudaohang li:eq(1) a').tab('show');
+                      });
+                  </script>
+              </div>
+      </div>
+    <!-- 天气 -->
+    <script type="text/javascript">
+                   WIDGET = {FID: 'VFxh36VQLy'}
+    </script>
+    <script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"></script>
+    <!--获取天气-->
+            <script>
+                $(function () {
+                    // Ajax请求：一般在刷新页面中的局部数据时，会使用ajax请求。该请求不会去重新刷新或请求这个页面中的所有数据，而只是动态的修改一部分数据。
+                   
+                        $.ajax({
+                            // 请求地址
+                            url: 'http://api.map.baidu.com/telematics/v3/weather?location=' + '南昌' + '&output=json&ak=3MeNM856OuBObEuVeZ1mPZz1cXwOuS1X&callback=?',
+                            // url: 'http://api.map.baidu.com/telematics/v3/weather?location=' + '南昌' + '&output=json&ak=TueGDhCvwI6fOrQnLM0qmXxY9N0OkOiQ&callback=?',
+                            // 请求类型：GET/POST
+                            type: 'GET',
+                            // 请求参数，是一个字符串。
+                            // data: '',
+                            // 指定服务器返回的数据类型
+                            dataType: 'json',
+                            // 指定请求失败的回调函数
+                            error: function (data, status) {
+                                console.log('请求失败：', status, data);
+                            },
+                            // 请求成功的回调函数
+                            success: function (data, status) {
+                                // 请求成功，得到json数据，解析json数据，将数据展示到页面中。
+                                console.log('请求成功：', data);
+                                var result = data['results'][0];
+                                var weather_data = result['weather_data'][0];
+                                var tem = weather_data['temperature'];
+                                var temnum = tem.split("~");
+                                var center = parseInt((parseInt(temnum[0]) + parseInt(temnum[1])) * 0.5);
+                                //$('.temperature2').text(center);
+                                
+                                    $.ajax({
+                                        url: "/YiChu/TianqiClothes",
+                                        type: 'POST',
+                                        data: { "tianqi": center },
+                                        success: function (data, status) {
+                                            $("#todayallc").html(data)
+                                        },
+                                        async: true
+                                    });
+                            
+                            },
+                            // 发起请求的方式：同步(false)还是异步(true)
+                            async: true
+                        });
+                })
+                  
+                //删除上衣
+                $(".delshirt").click(function () {
+                    var shirtid = $(this).next().val();
+                    $.ajax({
+                        type: "get",
+                        url: "/YiChu/delshirt",
+                        data: { "shirtid": shirtid },
+                        success: function (data) {
+                            alert(data);
+                        },
+                        async: true
+                    });
+                })
+                //删除外套
+                $(".delcoat").click(function () {
+                    var coatid = $(this).next().val();
+                    $.ajax({
+                        type: "get",
+                        url: "/YiChu/delcoat",
+                        data: { "coatid": coatid },
+                        success: function (data) {
+                            alert(data);
+                        },
+                        async: true
+                    });
+                })
+                //删除下装
+                $(".delne").click(function () {
+                    var neid = $(this).next().val();
+                    $.ajax({
+                        type: "get",
+                        url: "/YiChu/delne",
+                        data: { "neid": neid },
+                        success: function (data) {
+                            alert(data);
+                        },
+                        async: true
+                    });
+                })
+                //删除套装
+                $(".delsuit").click(function () {
+                    var suitid = $(this).next().val();
+                    $.ajax({
+                        type: "get",
+                        url: "/YiChu/delsuit",
+                        data: { "suitid": suitid },
+                        success: function (data) {
+                            alert(data);
+                        },
+                        async: true
+                    });
+                })
+    </script>
+</body>
+</html>

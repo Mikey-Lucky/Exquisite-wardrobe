@@ -1,0 +1,12 @@
+﻿@model IEnumerable<Models.U_Reply_VideoComment>
+
+@foreach (var c in Model)
+{
+    <p style="text-indent: 60px">
+        <span>@c.Users.UserName</span>
+        <span style="color: #999">回复</span>
+        <span>@c.VideoComment.Users.UserName :</span>
+        <span>@c.VCContent</span>
+    </p>
+}
+

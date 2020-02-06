@@ -1,0 +1,180 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_LayoutDaohang.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>UpNote</title>
+    <script type="text/javascript" charset="utf-8" src="~/utf8-asp/ueditor.config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="~/utf8-asp/ueditor.all.min.js"></script>
+    <!--建议手动加在语言，避免在ie下有时因为加载语言失败导致编辑器加载失败-->
+    <!--这里加载的语言文件会覆盖你在配置项目里添加的语言类型，比如你在配置项目里配置的是英文，这里加载的中文，那最后就是中文-->
+    <script type="text/javascript" charset="utf-8" src="~/utf8-asp/lang/zh-cn/zh-cn.js"></script>
+    <script src="~/Scripts/xuimi.js"></script>
+    <link href="~/Content/xiumi.css" rel="stylesheet" />
+    <style>
+        .content {
+            background-color: antiquewhite;
+            overflow-y: scroll;
+        }
+        #editor {
+            width: 800px;
+            height:500px;
+            margin: 0 auto;
+           
+        }
+        .file-box {
+            position: relative;
+            display: inline-block;
+        }
+        .file-box img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            position: absolute;
+            top: -30px;
+            left: 0;
+            display: inline-block;
+            border: none;
+        }
+        .file-box .txt,.file-box .file {
+            width: 70px;
+            height: 36px;
+            position: absolute;
+            top: -20px;
+            left: 100px;
+            text-align: center;
+        }
+        .container {
+            width: 76%;
+            margin: 0 auto;
+            border: 1px solid #f5f5f5;
+
+        }
+        .title {
+                font-size: 36px;
+                color: #9E9E9E;
+                height: 80px;
+                width: 100%;
+                margin-top: 10px;
+                border: 0;
+                /* text-align: center; */
+            }
+        /**************************富文本编辑器开始*****************/
+        #container {
+            margin: 6px;
+
+        } 
+       .edui-default .edui-editor {
+            
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            border-radius: 0px;
+        }
+        #edui2 {
+            background-color: #f2f2f2;
+        }
+        .button {
+            display: block;
+            width: 100%;
+            height: 30px;
+            background-color: #f2f2f2;
+            border: 0px;
+        }
+        .edui-default .edui-editor {
+            border: 0;
+        }
+        #edui1_iframeholder {
+           /*height: 340px!important;*/       
+        }
+        /**************************富文本编辑器结束******************/
+        /************************上传图片开始*/
+         * { margin: 0; padding: 0; } 
+         .upload { 
+             display: inline-block; 
+             width: 200px; 
+             height: 200px; 
+             line-height: 60px; 
+             background: #fff; 
+             position: relative; 
+             text-align: center; } 
+         /*input 标签有默认的宽高border,outline*/
+          .upload> input { 
+              position: absolute; 
+              top: 0; 
+              left: 0; 
+              width: 100%; 
+              height: 100%; 
+              /*透明度为0*/ opacity: 0; 
+              cursor: pointer; 
+
+          }
+
+        /******************上传图片结束*/
+    </style>
+</head>
+<body>
+    @*<div class="content">
+        <div>
+            <h1>完整demo</h1>
+            
+            <input name="title" />标题
+            <script id="editor" type="text/plain">
+            </script>
+        </div>
+    </div>*@
+    @*<div class="upload">
+        上传文件
+        <input type="file">
+    </div>*@
+    <div class="container">
+        @using (Html.BeginForm("UpNote", "YiChuShow", FormMethod.Post, new { @class = "PostSendForm", enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+           
+            <script id="container" name="content" type="text/plain">
+            </script>
+            <input name="title" value="请输入标题" class="title" />
+            <div class="upload">
+                @*选择封面
+                    <input type="file" id="imgFile" name="imgfile" onchange="previewFile()" ><br>*@
+
+                <p style="text-align: left">上传封面</p>
+                <img id="imgpre" src="~/Images/yichu/上传图片(1).png" style="height:200px;width:200px;" alt="Image preview...">
+                <input type="file" id="imgFile" name="imgfile" onchange="previewFile()">
+                @*</img >*@
+            </div>
+
+           
+
+            <input class="button" type="submit" value="提交" />
+        }
+    </div>
+    <script type="text/javascript">
+     var editor = UE.getEditor('container');
+    function previewFile() {
+        var preview = document.getElementById('imgpre')
+        var fileDom = document.querySelector('input[type=file]')
+        // 获取得到file 对象
+        var file = fileDom.files[0]
+        // 限制上传图片的大小
+        if (file.size > 1024 * 1024 * 2) {
+            alert('图片大小不能超过 2MB!');
+            return false;
+        }
+        // 创建url
+        var imgUrl = window.URL.createObjectURL(file)
+        preview.setAttribute("src", imgUrl)
+        // 更改img url 以后释放 url
+        preview.onload = function () {
+            // console.log('图片加载成功')
+            URL.revokeObjectURL(imgUrl)
+        }
+    }
+    </script>
+</body>
+</html>
